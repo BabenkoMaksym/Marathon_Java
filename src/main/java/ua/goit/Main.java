@@ -160,13 +160,13 @@ public class Main extends TelegramLongPollingBot {
 
 
                 attachButtons(message, Map.of(
-                        "Купити Джавелін (50 монет)", "level_4_task"
+                        "Купити Джавелін (50 монет)", "buy_javelin"
                 ));
 
                 sendApiMethodAsync(message);
             }
 
-            if (update.getCallbackQuery().getData().equals("level_4_task") && getLevel(chatId) == 4) {
+            if (update.getCallbackQuery().getData().equals("buy_javelin") && getLevel(chatId) == 4) {
                 //Send image
                 sendImage("final", chatId);
 
