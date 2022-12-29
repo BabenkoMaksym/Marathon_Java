@@ -194,7 +194,7 @@ public class Main extends TelegramLongPollingBot {
 
     public SendMessage createMessage(String text) {
         SendMessage message = new SendMessage();
-        message.setText(new String(text.getBytes(), StandardCharsets.UTF_8));
+        message.setText(text);
         message.setParseMode("markdown");
         return message;
     }
@@ -207,7 +207,7 @@ public class Main extends TelegramLongPollingBot {
             String buttonValue = buttons.get(buttonName);
 
             InlineKeyboardButton button = new InlineKeyboardButton();
-            button.setText(new String(buttonName.getBytes(), StandardCharsets.UTF_8));
+            button.setText(buttonName);
             button.setCallbackData(buttonValue);
 
             keyboard.add(Arrays.asList(button));
